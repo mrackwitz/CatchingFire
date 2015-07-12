@@ -118,7 +118,8 @@
 				29673D191B4C382200EC2043 /* CatchingFire.swift */,
 				29673D041B4C381300EC2043 /* Info.plist */,
 			);
-			path = CatchingFire;
+			name = CatchingFire;
+			path = src;
 			sourceTree = "<group>";
 		};
 		29673D0D1B4C381300EC2043 /* CatchingFireTests */ = {
@@ -128,7 +129,8 @@
 				29A2CEFB1B4EA3D10084D2DB /* ExampleTests.swift */,
 				29673D101B4C381300EC2043 /* Info.plist */,
 			);
-			path = CatchingFireTests;
+			name = CatchingFireTests;
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +444,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CatchingFire/Info.plist;
+				INFOPLIST_FILE = src/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.mariusrackwitz.CatchingFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,7 +466,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CatchingFire/Info.plist;
+				INFOPLIST_FILE = src/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.mariusrackwitz.CatchingFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
