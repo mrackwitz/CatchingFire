@@ -53,6 +53,7 @@
 		2932A0FB1B52ABE800A71171 /* UniversalFramework_Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UniversalFramework_Base.xcconfig; sourceTree = "<group>"; };
 		2932A0FC1B52ABE800A71171 /* UniversalFramework_Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UniversalFramework_Framework.xcconfig; sourceTree = "<group>"; };
 		2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UniversalFramework_Test.xcconfig; sourceTree = "<group>"; };
+		2932A10D1B52CB0800A71171 /* CatchingFire.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; indentWidth = 2; path = CatchingFire.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		29673CFF1B4C381300EC2043 /* CatchingFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatchingFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29673D021B4C381300EC2043 /* CatchingFire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchingFire.h; sourceTree = "<group>"; };
 		29673D041B4C381300EC2043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		29673CF51B4C381300EC2043 = {
 			isa = PBXGroup;
 			children = (
+				2932A10D1B52CB0800A71171 /* CatchingFire.podspec */,
 				29673D011B4C381300EC2043 /* CatchingFire */,
 				29673D0D1B4C381300EC2043 /* CatchingFireTests */,
 				2932A0F81B52ABE800A71171 /* xcconfigs */,
