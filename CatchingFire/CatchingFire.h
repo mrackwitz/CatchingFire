@@ -6,7 +6,7 @@
 //  Copyright © 2015 Marius Rackwitz. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for CatchingFire.
 FOUNDATION_EXPORT double CatchingFireVersionNumber;

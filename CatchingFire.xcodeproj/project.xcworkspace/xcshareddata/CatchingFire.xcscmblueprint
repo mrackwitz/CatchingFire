@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8206996771CC8CDEEF1F2D189BD099CD6BAF811A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8206996771CC8CDEEF1F2D189BD099CD6BAF811A" : 0,
+    "2DDF1D4E528EDA8D8E5AF503BA5680A30604BD70" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D27A5EEC-BEDC-4806-9D91-D0C8A67FC9CE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8206996771CC8CDEEF1F2D189BD099CD6BAF811A" : "CatchingFire\/",
+    "2DDF1D4E528EDA8D8E5AF503BA5680A30604BD70" : "CatchingFire\/xcconfigs\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CatchingFire",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CatchingFire.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mrackwitz\/xcconfigs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2DDF1D4E528EDA8D8E5AF503BA5680A30604BD70"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mrackwitz\/CatchingFire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8206996771CC8CDEEF1F2D189BD099CD6BAF811A"
+    }
+  ]
+}

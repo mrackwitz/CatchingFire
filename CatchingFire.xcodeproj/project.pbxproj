@@ -25,6 +25,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2932A0FB1B52ABE800A71171 /* UniversalFramework_Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UniversalFramework_Base.xcconfig; sourceTree = "<group>"; };
+		2932A0FC1B52ABE800A71171 /* UniversalFramework_Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UniversalFramework_Framework.xcconfig; sourceTree = "<group>"; };
+		2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UniversalFramework_Test.xcconfig; sourceTree = "<group>"; };
 		29673CFF1B4C381300EC2043 /* CatchingFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatchingFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29673D021B4C381300EC2043 /* CatchingFire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchingFire.h; sourceTree = "<group>"; };
 		29673D041B4C381300EC2043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,11 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2932A0F81B52ABE800A71171 /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				2932A0FB1B52ABE800A71171 /* UniversalFramework_Base.xcconfig */,
+				2932A0FC1B52ABE800A71171 /* UniversalFramework_Framework.xcconfig */,
+				2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */,
+			);
+			path = xcconfigs;
+			sourceTree = "<group>";
+		};
 		29673CF51B4C381300EC2043 = {
 			isa = PBXGroup;
 			children = (
 				29673D011B4C381300EC2043 /* CatchingFire */,
 				29673D0D1B4C381300EC2043 /* CatchingFireTests */,
+				2932A0F81B52ABE800A71171 /* xcconfigs */,
 				29673D001B4C381300EC2043 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +124,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29673D131B4C381300EC2043 /* Build configuration list for PBXNativeTarget "CatchingFire" */;
 			buildPhases = (
+				2932A0FE1B52ADFE00A71171 /* ShellScript */,
 				29673CFA1B4C381300EC2043 /* Sources */,
 				29673CFB1B4C381300EC2043 /* Frameworks */,
 				29673CFC1B4C381300EC2043 /* Headers */,
@@ -195,6 +210,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2932A0FE1B52ADFE00A71171 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29673CFA1B4C381300EC2043 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -226,6 +257,7 @@
 /* Begin XCBuildConfiguration section */
 		29673D111B4C381300EC2043 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2932A0FB1B52ABE800A71171 /* UniversalFramework_Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -248,7 +280,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -264,9 +295,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -274,6 +303,7 @@
 		};
 		29673D121B4C381300EC2043 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2932A0FB1B52ABE800A71171 /* UniversalFramework_Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -305,8 +335,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -315,6 +343,7 @@
 		};
 		29673D141B4C381300EC2043 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2932A0FC1B52ABE800A71171 /* UniversalFramework_Framework.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -327,7 +356,6 @@
 				);
 				INFOPLIST_FILE = CatchingFire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.mariusrackwitz.CatchingFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -337,6 +365,7 @@
 		};
 		29673D151B4C381300EC2043 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2932A0FC1B52ABE800A71171 /* UniversalFramework_Framework.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -349,7 +378,6 @@
 				);
 				INFOPLIST_FILE = CatchingFire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.mariusrackwitz.CatchingFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -358,6 +386,7 @@
 		};
 		29673D171B4C381300EC2043 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CatchingFireTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -368,6 +397,7 @@
 		};
 		29673D181B4C381300EC2043 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CatchingFireTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
