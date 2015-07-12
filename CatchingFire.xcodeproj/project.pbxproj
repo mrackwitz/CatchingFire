@@ -6,6 +6,31 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		2932A0FF1B52B45700A71171 /* CatchingFire iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2932A1021B52B45700A71171 /* Build configuration list for PBXAggregateTarget "CatchingFire iOS" */;
+			buildPhases = (
+				2932A10C1B52BD0D00A71171 /* Build Framework */,
+			);
+			dependencies = (
+			);
+			name = "CatchingFire iOS";
+			productName = "CatchingFire iOS";
+		};
+		2932A1051B52B6AE00A71171 /* CatchingFire OS X */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2932A1081B52B6AE00A71171 /* Build configuration list for PBXAggregateTarget "CatchingFire OS X" */;
+			buildPhases = (
+				2932A10B1B52BB8200A71171 /* Build Framework */,
+			);
+			dependencies = (
+			);
+			name = "CatchingFire OS X";
+			productName = "CatchingFire iOS";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		29673D031B4C381300EC2043 /* CatchingFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 29673D021B4C381300EC2043 /* CatchingFire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29673D0A1B4C381300EC2043 /* CatchingFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29673CFF1B4C381300EC2043 /* CatchingFire.framework */; };
@@ -167,6 +192,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Marius Rackwitz";
 				TargetAttributes = {
+					2932A0FF1B52B45700A71171 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					29673CFE1B4C381300EC2043 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -189,6 +217,8 @@
 			targets = (
 				29673CFE1B4C381300EC2043 /* CatchingFire */,
 				29673D081B4C381300EC2043 /* CatchingFireTests */,
+				2932A0FF1B52B45700A71171 /* CatchingFire iOS */,
+				2932A1051B52B6AE00A71171 /* CatchingFire OS X */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +254,36 @@
 			shellPath = /bin/sh;
 			shellScript = "exit 0";
 		};
+		2932A10B1B52BB8200A71171 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild build -sdk macosx";
+			showEnvVarsInLog = 0;
+		};
+		2932A10C1B52BD0D00A71171 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild build -sdk iphoneos";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -255,6 +315,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2932A1001B52B45700A71171 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2932A1011B52B45700A71171 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2932A1091B52B6AE00A71171 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2932A10A1B52B6AE00A71171 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		29673D111B4C381300EC2043 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2932A0FB1B52ABE800A71171 /* UniversalFramework_Base.xcconfig */;
@@ -409,6 +497,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2932A1021B52B45700A71171 /* Build configuration list for PBXAggregateTarget "CatchingFire iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2932A1001B52B45700A71171 /* Debug */,
+				2932A1011B52B45700A71171 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2932A1081B52B6AE00A71171 /* Build configuration list for PBXAggregateTarget "CatchingFire OS X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2932A1091B52B6AE00A71171 /* Debug */,
+				2932A10A1B52B6AE00A71171 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		29673CF91B4C381300EC2043 /* Build configuration list for PBXProject "CatchingFire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
