@@ -29,33 +29,33 @@ func idButFailsWithZero(x: Int) throws -> Int {
 class CatchingFireTests: XCTestCase {
     
     func testVoidDoNotThrow() {
-        AssertNotThrow(try failsWithZero(1))
-        AssertNotThrow {
+        AssertNoThrow(try failsWithZero(1))
+        AssertNoThrow {
             try failsWithZero(1)
         }
     }
     
     func testVoidThrow() {
-        AssertThrow(Error.MayNotBeZero, try failsWithZero(0))
-        AssertThrow(Error.MayNotBeZero) {
+        AssertThrows(Error.MayNotBeZero, try failsWithZero(0))
+        AssertThrows(Error.MayNotBeZero) {
             try failsWithZero(0)
         }
     }
     
     func testNonVoidDoNotThrow() {
-        AssertNotThrow(try idButFailsWithZero(1))
-        AssertNotThrow {
+        AssertNoThrow(try idButFailsWithZero(1))
+        AssertNoThrow {
             let x = try idButFailsWithZero(1)
             XCTAssertEqual(x, 1)
         }
-        AssertNotThrow(try idButFailsWithZero(1)).map { (x: Int) in
+        AssertNoThrow(try idButFailsWithZero(1)).map { (x: Int) in
             XCTAssertEqual(x, 1)
         }
     }
     
     func testNonVoidThrow() {
-        AssertThrow(Error.MayNotBeZero, try idButFailsWithZero(0))
-        AssertThrow(Error.MayNotBeZero) {
+        AssertThrows(Error.MayNotBeZero, try idButFailsWithZero(0))
+        AssertThrows(Error.MayNotBeZero) {
             try idButFailsWithZero(0)
         }
     }

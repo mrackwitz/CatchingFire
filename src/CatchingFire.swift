@@ -25,27 +25,27 @@ import XCTest
 ///
 /// Instead you can write now:
 ///
-///     AssertNotThrow {
+///     AssertNoThrow {
 ///         XCTAssertEqual(try fib(x), 21)
 ///     }
 ///
 /// Or alternatively:
 ///
-///     AssertNotThrow(try fib(x)).map { (y: Int) in
+///     AssertNoThrow(try fib(x)).map { (y: Int) in
 ///         XCTAssertEqual(y, 21)
 ///     }
 ///
 /// If the expression fails, your test fails.
 ///
-public func AssertNotThrow<R>(@autoclosure closure: () throws -> R) -> R? {
+public func AssertNoThrow<R>(@autoclosure closure: () throws -> R) -> R? {
     var result: R?
-    AssertNotThrow() {
+    AssertNoThrow() {
         result = try closure()
     }
     return result
 }
 
-public func AssertNotThrow(@noescape closure: () throws -> ()) {
+public func AssertNoThrow(@noescape closure: () throws -> ()) {
     do {
         try closure()
     } catch let error {
@@ -72,17 +72,17 @@ public func AssertNotThrow(@noescape closure: () throws -> ()) {
 ///
 /// Instead you can write now:
 ///
-///     AssertThrow(Error.ArgumentMayNotBeNegative) {
+///     AssertThrows(Error.ArgumentMayNotBeNegative) {
 ///         try fib(-1)
 ///     }
 ///
 /// If the expression or closure doesn't throw the expected error, your test fails.
 ///
-public func AssertThrow<R, E where E: ErrorType>(expectedError: E, @autoclosure _ closure: () throws -> R) -> () {
-    AssertThrow(expectedError) { try closure() }
+public func AssertThrows<R, E where E: ErrorType>(expectedError: E, @autoclosure _ closure: () throws -> R) -> () {
+    AssertThrows(expectedError) { try closure() }
 }
 
-public func AssertThrow<E where E: ErrorType>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
+public func AssertThrows<E where E: ErrorType>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
     do {
         try closure()
         XCTFail("Expected error <\(expectedError)>, "
@@ -96,11 +96,11 @@ public func AssertThrow<E where E: ErrorType>(expectedError: E, @noescape _ clos
     }
 }
 
-public func AssertThrow<R, E where E: ErrorType, E: Equatable>(expectedError: E, @autoclosure _ closure: () throws -> R) -> () {
-    AssertThrow(expectedError) { try closure() }
+public func AssertThrows<R, E where E: ErrorType, E: Equatable>(expectedError: E, @autoclosure _ closure: () throws -> R) -> () {
+    AssertThrows(expectedError) { try closure() }
 }
 
-public func AssertThrow<E where E: ErrorType, E: Equatable>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
+public func AssertThrows<E where E: ErrorType, E: Equatable>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
     do {
         try closure()
         XCTFail("Expected error <\(expectedError)>, "

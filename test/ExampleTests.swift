@@ -60,27 +60,27 @@ class ExampleTests : XCTestCase {
     }
     
     func testDisarm() {
-        AssertNotThrow {
+        AssertNoThrow {
             let trigger = try 💣(🕚)
             try trigger.cutBlueWire()
         }
-        AssertNotThrow(try 💣(🕛))
+        AssertNoThrow(try 💣(🕛))
     }
 
     func testDoNotDisarm() {
-        AssertNotThrow(try 💣(🕚))
-        AssertThrow(🔥, try 💣(🕛))
+        AssertNoThrow(try 💣(🕚))
+        AssertThrows(🔥, try 💣(🕛))
     }
 
     func testFailToDisarm() {
-        AssertThrow(BombError.WrongWire) {
+        AssertThrows(BombError.WrongWire) {
             let trigger = try 💣(🕚)
             try trigger.cutRedWire()
         }
     }
     
     func testIsArmedInitially() {
-        XCTAssertTrue(AssertNotThrow(try 💣(🕚))?.enabled == true)
+        XCTAssertTrue(AssertNoThrow(try 💣(🕚))?.enabled == true)
     }
     
 }
