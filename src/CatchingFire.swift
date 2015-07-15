@@ -49,8 +49,7 @@ public func AssertNoThrow(@noescape closure: () throws -> ()) {
     do {
         try closure()
     } catch let error {
-        XCTFail("Catched error \(error), "
-            + "but did not expect any error.")
+        XCTFail("Caught unexpected error <\(error)>.")
     }
 }
 
@@ -85,13 +84,13 @@ public func AssertThrows<R, E where E: ErrorType>(expectedError: E, @autoclosure
 public func AssertThrows<E where E: ErrorType>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
     do {
         try closure()
-        XCTFail("Expected error <\(expectedError)>, "
-            + "but closure succeeded.")
+        XCTFail("Expected to catch <\(expectedError)>, "
+            + "but no error was thrown.")
     } catch expectedError {
         return // that's what we expected
     } catch {
-        XCTFail("Catched error <\(error)>, "
-            + "but not from the expected type and value "
+        XCTFail("Caught error <\(error)>, "
+            + "but not of the expected type and value "
             + "<\(expectedError)>.")
     }
 }
@@ -103,15 +102,15 @@ public func AssertThrows<R, E where E: ErrorType, E: Equatable>(expectedError: E
 public func AssertThrows<E where E: ErrorType, E: Equatable>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
     do {
         try closure()
-        XCTFail("Expected error <\(expectedError)>, "
-            + "but closure succeeded.")
+        XCTFail("Expected to catch <\(expectedError)>, "
+            + "but no error was thrown.")
     } catch let error as E {
         XCTAssertEqual(error, expectedError,
-            "Catched error <\(error)> is from expected type <\(E.self)>, "
+            "Caught error <\(error)> is of the expected type <\(E.self)>, "
                 + "but not the expected case <\(expectedError)>.")
     } catch {
-        XCTFail("Catched error <\(error)>, "
-            + "but not from the expected type and value "
+        XCTFail("Caught error <\(error)>, "
+            + "but not of the expected type and value "
             + "<\(expectedError)>.")
     }
 }
