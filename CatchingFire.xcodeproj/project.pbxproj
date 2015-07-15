@@ -482,7 +482,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = CatchingFireTests/Info.plist;
+				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.mariusrackwitz.CatchingFireTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,7 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2932A0FD1B52ABE800A71171 /* UniversalFramework_Test.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = CatchingFireTests/Info.plist;
+				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.mariusrackwitz.CatchingFireTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
