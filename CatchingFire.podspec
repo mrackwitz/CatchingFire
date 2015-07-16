@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.license               = 'MIT License'
   s.source                = { :git => 'https://github.com/mrackwitz/CatchingFire.git', :tag => s.version.to_s }
   s.source_files          = 'src/CatchingFire.swift'
+  s.frameworks            = 'XCTest'
   s.pod_target_xcconfig   = {
     "FRAMEWORK_SEARCH_PATHS" => "$(inherited) '$(PLATFORM_DIR)/Developer/Library/Frameworks'"
   }
