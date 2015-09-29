@@ -7,9 +7,9 @@ CatchingFire is a Swift test framework, which helps making expectations against 
 
 ## Usage
 
-### AssertNotThrow
+### AssertNoThrow
 
-`AssertNotThrow` allows you to write safe tests for the happy path of failable functions.
+`AssertNoThrow` allows you to write safe tests for the happy path of failable functions.
 It helps you to avoid the `try!` operator in tests.
 
 If you want to test a function, which may fail in general, you may think of using `try`.
@@ -28,7 +28,7 @@ which is very undesirable, especially on CI, but also for your workflow when you
 Instead you can write now:
 
 ```swift
-AssertNotThrow {
+AssertNoThrow {
     XCTAssertEqual(try fib(x), 21)
 }
 ```
@@ -36,7 +36,7 @@ AssertNotThrow {
 Or alternatively:
 
 ```swift
-AssertNotThrow(try fib(x)).map { (y: Int) in
+AssertNoThrow(try fib(x)).map { (y: Int) in
     XCTAssertEqual(y, 21)
 }
 ```
