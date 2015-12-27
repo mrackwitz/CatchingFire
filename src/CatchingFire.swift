@@ -37,19 +37,20 @@ import XCTest
 ///
 /// If the expression fails, your test fails.
 ///
-public func AssertNoThrow<R>(@autoclosure closure: () throws -> R) -> R? {
+public func AssertNoThrow<R>(@autoclosure closure: () throws -> R, file: String = __FILE__, line: UInt = __LINE__) -> R? {
     var result: R?
-    AssertNoThrow() {
+    AssertNoThrow(file: file, line: line) {
         result = try closure()
     }
     return result
 }
 
-public func AssertNoThrow(@noescape closure: () throws -> ()) {
+public func AssertNoThrow(file file: String = __FILE__, line: UInt = __LINE__, @noescape closure: () throws -> ()) {
     do {
         try closure()
     } catch let error {
-        XCTFail("Caught unexpected error <\(error)>.")
+        XCTFail("Caught unexpected error <\(error)>.",
+            file: file, line: line)
     }
 }
 
@@ -77,41 +78,46 @@ public func AssertNoThrow(@noescape closure: () throws -> ()) {
 ///
 /// If the expression or closure doesn't throw the expected error, your test fails.
 ///
-public func AssertThrows<R, E where E: ErrorType>(expectedError: E, @autoclosure _ closure: () throws -> R) -> () {
-    AssertThrows(expectedError) { try closure() }
+public func AssertThrows<R, E where E: ErrorType>(expectedError: E, file: String = __FILE__, line: UInt = __LINE__, @autoclosure _ closure: () throws -> R) -> () {
+    AssertThrows(expectedError, file: file, line: line) { try closure() }
 }
 
-public func AssertThrows<E where E: ErrorType>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
+public func AssertThrows<E where E: ErrorType>(expectedError: E, file: String = __FILE__, line: UInt = __LINE__, @noescape _ closure: () throws -> ()) -> () {
     do {
         try closure()
         XCTFail("Expected to catch <\(expectedError)>, "
-            + "but no error was thrown.")
+            + "but no error was thrown.",
+            file: file, line: line)
     } catch expectedError {
         return // that's what we expected
     } catch {
         XCTFail("Caught error <\(error)>, "
             + "but not of the expected type and value "
-            + "<\(expectedError)>.")
+            + "<\(expectedError)>.",
+            file: file, line: line)
     }
 }
 
-public func AssertThrows<R, E where E: ErrorType, E: Equatable>(expectedError: E, @autoclosure _ closure: () throws -> R) -> () {
-    AssertThrows(expectedError) { try closure() }
+public func AssertThrows<R, E where E: ErrorType, E: Equatable>(expectedError: E, @autoclosure _ closure: () throws -> R, file: String = __FILE__, line: UInt = __LINE__) -> () {
+    AssertThrows(expectedError, file: file, line: line) { try closure() }
 }
 
-public func AssertThrows<E where E: ErrorType, E: Equatable>(expectedError: E, @noescape _ closure: () throws -> ()) -> () {
+public func AssertThrows<E where E: ErrorType, E: Equatable>(expectedError: E, file: String = __FILE__, line: UInt = __LINE__, @noescape _ closure: () throws -> ()) -> () {
     do {
         try closure()
         XCTFail("Expected to catch <\(expectedError)>, "
-            + "but no error was thrown.")
+            + "but no error was thrown.",
+            file: file, line: line)
     } catch let error as E {
         XCTAssertEqual(error, expectedError,
             "Caught error <\(error)> is of the expected type <\(E.self)>, "
-                + "but not the expected case <\(expectedError)>.")
+                + "but not the expected case <\(expectedError)>.",
+            file: file, line: line)
     } catch {
         XCTFail("Caught error <\(error)>, "
             + "but not of the expected type and value "
-            + "<\(expectedError)>.")
+            + "<\(expectedError)>.",
+            file: file, line: line)
     }
 }
 
