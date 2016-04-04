@@ -9,7 +9,7 @@
 import XCTest
 import CatchingFire
 
-enum Error : ErrorType {
+enum Error : ErrorProtocol {
     case MayNotBeZero
 }
 
