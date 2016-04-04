@@ -10,7 +10,7 @@ import XCTest
 import CatchingFire
 
 
-enum BombError: ErrorType {
+enum BombError: ErrorProtocol {
     case WrongWire
     case TimeElapsed
 }
